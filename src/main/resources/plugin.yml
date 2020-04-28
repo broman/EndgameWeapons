@@ -1,0 +1,12 @@
+main: dev.broman.endgameweapons.plugin.Main
+name: EndgameWeapons
+version: 0.0.1
+author: broman
+description: no
+api-version: 1.15
+commands:
+  addenchant:
+    description: Testing
+    usage: /<command> [player]
+    permission: EndgameWeapons.test
+    permission-message: Fuck

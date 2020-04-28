@@ -1,0 +1,27 @@
+
+# Do not change these values!
+custom-enchantments: 1
+enchantable: false
+enchantments:
+- custom0:
+  name: Custom
+  tier: I
+  potions: 0
+  sounds: 0
+  effects: 0
+  extra-damage:
+    use: false
+    damage: 1
+    applies-to: victim
+  fire:
+    use: false
+    time: 100
+    applies-to: victim
+  lightning:
+    strike: false
+    effect: false
+    applies-to: victim
+  requirements:
+    min-level: 0
+    max-level: 15
+  chance: 0.01

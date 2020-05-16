@@ -1,10 +1,12 @@
 package dev.broman.endgameweapons.enchantments
+import dev.broman.endgameweapons.plugin.Enchant
 import org.bukkit.enchantments.{Enchantment, EnchantmentTarget}
 import org.bukkit.entity.LivingEntity
 import org.bukkit.event.entity.EntityDamageByEntityEvent
 import org.bukkit.inventory.ItemStack
 import org.bukkit.potion.{PotionEffect, PotionEffectType}
 
+@Enchant
 case object PoisonEdge extends CustomEnchantment("poisonedge") {
   override def getName: String = "Poison Edge"
 

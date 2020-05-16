@@ -2,6 +2,7 @@ package dev.broman.endgameweapons.plugin
 
 import dev.broman.endgameweapons.commands.AddEnchantment
 import dev.broman.endgameweapons.enchantments.{CustomEnchantment, Knockup, LifeSteal, PoisonEdge}
+import io.github.classgraph.ClassGraph
 import org.bukkit.command.CommandSender
 import org.bukkit.enchantments.Enchantment
 import org.bukkit.event.Listener
@@ -30,8 +31,11 @@ class Main extends JavaPlugin {
     "addenchant" -> classOf[AddEnchantment]
   )
 
+  def add(e: CustomEnchantment): Unit = Main.customEnchants += (e.getName -> e)
+
   override def onEnable(): Unit = {
     getLogger.info("Registering enchantments...")
+    getLogger.severe(new ClassGraph().enableAllInfo().scan().getClassesWithAnnotation("Enchant").size().toString)
     Main.customEnchants.values foreach registerEnchantment
     getLogger.info("Registering listeners...")
     getServer.getPluginManager.registerEvents(new CustomEnchantListener, this)
@@ -50,7 +54,7 @@ class Main extends JavaPlugin {
         registered = false
         e.printStackTrace()
     }
-    if (registered) {
+    if(registered) {
       getLogger.info(s"Registered ${enchantment.getKey.getKey}")
     }
   }

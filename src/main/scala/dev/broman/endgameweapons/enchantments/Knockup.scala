@@ -2,7 +2,7 @@ package dev.broman.endgameweapons.enchantments
 import java.net.http.WebSocket.Listener
 import java.util
 
-import dev.broman.endgameweapons.plugin.Main
+import dev.broman.endgameweapons.plugin.{Enchant, Main}
 import org.bukkit.enchantments.{Enchantment, EnchantmentTarget}
 import org.bukkit.entity.LivingEntity
 import org.bukkit.event.entity.EntityDamageByEntityEvent
@@ -10,6 +10,7 @@ import org.bukkit.inventory.ItemStack
 import org.bukkit.scheduler.BukkitRunnable
 import org.bukkit.util.Vector
 
+@Enchant
 case object Knockup extends CustomEnchantment("knockup") with Listener {
   override def getName: String = "Knockup"
 

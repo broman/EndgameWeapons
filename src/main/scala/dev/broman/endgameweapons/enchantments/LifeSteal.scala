@@ -1,12 +1,14 @@
 package dev.broman.endgameweapons.enchantments
 import java.util
 
+import dev.broman.endgameweapons.plugin.Enchant
 import org.bukkit.ChatColor
 import org.bukkit.enchantments.{Enchantment, EnchantmentTarget}
 import org.bukkit.entity.Player
 import org.bukkit.event.entity.EntityDamageByEntityEvent
 import org.bukkit.inventory.ItemStack
 
+@Enchant
 case object LifeSteal extends CustomEnchantment("lifesteal") {
   override def getName: String = s"${ChatColor.RESET}${ChatColor.GRAY}Life Steal"
 
